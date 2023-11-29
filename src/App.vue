@@ -1,5 +1,5 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterView } from 'vue-router'
 import TheFooter from './views/FooterView.vue'
 import TheHeader from './views/HeaderView.vue'
 
@@ -7,7 +7,7 @@ import TheHeader from './views/HeaderView.vue'
 
 <template>
     <TheHeader />
-    
+
     <RouterView />
 
     <TheFooter />
