@@ -1,8 +1,20 @@
 <script setup>
-   import IconLinkedin from './icons/IconLinkedin.vue'
+   import FooterIcons from './subcomponents/FooterIcons.vue';
+   import FooterLastUpdate from './subcomponents/FooterLastUpdate.vue'
 </script>
 
 <template>
-   <IconLinkedin />
-   <p>Ici c'est le footer</p>
+   <div class="footer">
+      <FooterIcons />
+      <FooterLastUpdate />
+   </div>
 </template>
+
+<style scoped>
+   .footer {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+   }
+</style>
