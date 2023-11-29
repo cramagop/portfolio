@@ -16,4 +16,11 @@
         border-bottom: solid 1px black;
         border-top: solid 1px black;
     }
+
+    .flex-wrap-col-center {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        align-items: center;
+    }
 }
