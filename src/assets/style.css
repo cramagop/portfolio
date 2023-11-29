@@ -11,4 +11,9 @@
       display: flex;
       place-items: center;
     }
+
+    main {
+        border-bottom: solid 1px black;
+        border-top: solid 1px black;
+    }
 }
