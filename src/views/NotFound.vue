@@ -1,9 +1,7 @@
 <script setup>
-import NotFound from '../components/NotFound.vue'
+  import NotFound from '../components/NotFound.vue'
 </script>
 
 <template>
-    <main>
-      <NotFound />
-    </main>
+  <NotFound />
 </template>

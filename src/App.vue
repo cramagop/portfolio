@@ -3,9 +3,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-    <header class="flex-wrap-col-center">
+    <header class="col-flex-wrap-center">
         <figure class="photo-profile">
-            <a href="" target="_blank">
+            <a href="/">
                 <img class="photo-profile__img"
                     src="./assets/pictures/photo_profile_mpo.jpg"
                     title="Photo profile Marc POGAM"
@@ -14,9 +14,11 @@ import { RouterView } from 'vue-router'
         </figure>
     </header>
 
-    <RouterView />
+    <main>
+        <RouterView />
+    </main>
 
-    <footer>
+    <footer class="col-flex-wrap-center">
         <div class="footer__icons">
             <figure class="footer__icon">
                 <a href="https://www.linkedin.com/in/marc-pogam-03b046168" target="_blank">
@@ -45,10 +47,8 @@ import { RouterView } from 'vue-router'
     }
 
     .photo-profile__img {
-        width: 100%;
-        height: 100%;
         border-radius: 50%;
-        box-shadow: 0 0 15px #dbc2a4;
+        box-shadow: 0 0 15px black;
     }
 
     .footer__icons {
@@ -62,10 +62,6 @@ import { RouterView } from 'vue-router'
         width: 50px;
         height: 50px;
         margin: 10px;
-    }
-    .footer__icon img {
-    width: 100%;
-    height: 100%;
     }
 
     .footer__icon img:hover {
