@@ -1,16 +1,31 @@
 <script setup>
+    import { ref } from 'vue';
+    import creationModal from './creationModal.vue';
+
+    const modalDisplay = ref('none');
+
     const emit = defineEmits(["mouseOver", "mouseOut"]);
 
     function onMouseOver(elementID) {
-        emit("mouseOver", elementID)
+        emit("mouseOver", elementID);
     };
 
     function onMouseOut(elementID) {
         emit("mouseOut", elementID)
     };
+
+    function onModalClickClose() {
+        modalDisplay.value = 'none';
+    };
+
+    function onCreationClick() {
+        modalDisplay.value = 'block';
+    }
+
 </script>
 
 <template>
+    <creationModal @close-clicked="onModalClickClose" :display-props=modalDisplay />
     <section id="prez" 
             @mouseover="onMouseOver('prez')"
             @mouseout="onMouseOut('prez')"
@@ -25,36 +40,30 @@
             @mouseover="onMouseOver('creation')"
             @mouseout="onMouseOut('creation')"
             class="text-center row-flex-wrap-center">
-        <article>
-            <figure class="photo-profile">
-                <a href="/">
-                    <img class="photo-profile__img"
-                        src="../assets//pictures/photo_profile_mpo.jpg"
-                        title="Photo profile Marc POGAM"
-                        alt="La photo de Marc POGAM">
-                </a>
+        <article @click="onCreationClick">
+            <figure class="picture-creation">
+                <img class="picture-creation__img"
+                    src="../assets//pictures/cv.png"
+                    title="CV"
+                    alt="Icône représentant un CV">
             </figure>
             <h2>Mon CV</h2>
         </article>
-        <article>
-            <figure class="photo-profile">
-                <a href="/">
-                    <img class="photo-profile__img"
-                        src="../assets//pictures/photo_profile_mpo.jpg"
-                        title="Photo profile Marc POGAM"
-                        alt="La photo de Marc POGAM">
-                </a>
+        <article @click="onCreationClick">
+            <figure class="picture-creation">
+                <img class="picture-creation__img"
+                    src="../assets//pictures/formulaire.PNG"
+                    title="Formualaire"
+                    alt="Un formulaire avec des champs vide">
             </figure>
             <h2>Dynamiser un formulaire</h2>
         </article>
-        <article>
-            <figure class="photo-profile">
-                <a href="/">
-                    <img class="photo-profile__img"
-                        src="../assets//pictures/photo_profile_mpo.jpg"
-                        title="Photo profile Marc POGAM"
-                        alt="La photo de Marc POGAM">
-                </a>
+        <article @click="onCreationClick">
+            <figure class="picture-creation">
+                <img class="picture-creation__img"
+                    src="../assets//pictures/La socketterie.png"
+                    title="Cahier des charges"
+                    alt="Un paire de chaussette titré la socketterie">
             </figure>
             <h2>Un cahier des charges</h2>
         </article>
@@ -85,6 +94,10 @@
         box-shadow: 5px 5px 10px black;
     }
 
+    .isDisplay {
+        display: block;
+    }
+
     .row-flex-wrap-center {
         display: flex;
         flex-wrap: wrap;
@@ -103,14 +116,13 @@
         margin-top: 0px;
     }
 
-    .photo-profile {
+    .picture-creation {
         width: 150px;
         height: 150px;
         margin-top: 30px;
     }
 
-    .photo-profile__img {
-        /*border-radius: 50%;*/
+    .picture-creation__img {
         box-shadow: 0 0 15px black;
     }
 </style>
