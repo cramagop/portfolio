@@ -1,12 +1,29 @@
+<script setup>
+    const emit = defineEmits(["inFocus", "outFocus"]);
+
+    function onMouseOver(elementID) {
+        emit("inFocus", elementID)
+    };
+
+    function onMouseOut(elementID) {
+        emit("outFocus", elementID)
+    };
+
+</script>
+
 <template>
-    <section class="text-center col-flex-wrap-center">
+    <section @mouseover="onMouseOver('prez')"
+            @mouseout="onMouseOut('prez')"
+            id="prez" class="text-center col-flex-wrap-center">
         <h1 class="presentation-titre">Marc Pogam</h1>
         <p class="presentation-text">
             Passionné par l'informatique en général et plus particuliairement le développement, 
             je vous présente mon portfolio rassemblant quelques unes de mes réalisations.
         </p>
     </section>
-    <section class="text-center row-flex-wrap-center">
+    <section @mouseover="onMouseOver('creation')"
+            @mouseout="onMouseOut('creation')"
+            id="creation" class="text-center row-flex-wrap-center">
         <article>
             <figure class="photo-profile">
                 <a href="/">
@@ -40,36 +57,6 @@
             </figure>
             <h2>Un cahier des charges</h2>
         </article>
-    </section>
-    <section>
-        <form action="#" method="POST">
-          <div class="row-flex-wrap-center">
-            <label for="first-name">Prénom</label>
-            <div>
-              <input type="text" name="first-name" id="first-name" autocomplete="given-name">
-            </div>
-          </div>
-          <div>
-            <label for="last-name">Nom</label>
-            <div class="mt-1">
-              <input type="text" name="last-name" id="last-name" autocomplete="family-name">
-            </div>
-          </div>
-          <div>
-            <div>
-              <label for="message">Commentaire</label>
-              <span id="message-max">Max. 500 caractères</span>
-            </div>
-            <div class="mt-1">
-              <textarea id="message" name="message" rows="4" maxlength="500"></textarea>
-            </div>
-          </div>
-          <div>
-            <button type="submit">
-              Envoyer
-            </button>
-          </div>
-        </form>
     </section>
 </template>
 

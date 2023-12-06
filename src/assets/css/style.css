@@ -6,7 +6,7 @@
     font-weight: normal;
   }
   
-@media (min-width: 1024px) {
+
     body {
       display: flex;
       place-items: center;
@@ -29,7 +29,13 @@
         align-items: center;
     }
 
+    .row-flex-wrap-center {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+      align-items: center;
+  }
+
     .text-center {
       text-align: center;
     }
-}
