@@ -1,6 +1,11 @@
 <script setup>
   import TheHomeView from '../components/TheHomeView.vue'
 
+  /**
+   * Choose parent HTMLElement impacted by child HTMLElement event
+   * @param {String} childElementID
+   * @return {HTMLElement} Parent HTMLElement impacted
+  */ 
   function parentElementToImpact(childElementID) {
         switch(childElementID){
             case 'prez':
@@ -23,5 +28,5 @@
 </script>
 
 <template>
-  <TheHomeView @in-focus="underline" @out-focus="unUnderline"/>
+  <TheHomeView @mouse-over="underline" @mouse-out="unUnderline"/>
 </template>

@@ -20,7 +20,7 @@
                 <a id="creation_link" href="#creation" class="menu-item-link">Création</a>
             </div>
             <div class="menu-item">
-                <a id="contact_link" href="/" class="menu-item-link">Contact</a>
+                <a id="contact_link" href="#contact" class="menu-item-link">Contact</a>
             </div>
         </nav>
     </header>

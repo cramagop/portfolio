@@ -1,9 +1,9 @@
 <template>
     <div class="col-flex-wrap-center">
         <figure>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
                 <img src="../assets/pictures/vecteezy_404-landing-page_6549647.jpg"
-                    title="Note found"
+                    title="Not found"
                     alt="Une image montrant l'erreur 404">
             </a>
         </figure>

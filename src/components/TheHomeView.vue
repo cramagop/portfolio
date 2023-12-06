@@ -1,29 +1,30 @@
 <script setup>
-    const emit = defineEmits(["inFocus", "outFocus"]);
+    const emit = defineEmits(["mouseOver", "mouseOut"]);
 
     function onMouseOver(elementID) {
-        emit("inFocus", elementID)
+        emit("mouseOver", elementID)
     };
 
     function onMouseOut(elementID) {
-        emit("outFocus", elementID)
+        emit("mouseOut", elementID)
     };
-
 </script>
 
 <template>
-    <section @mouseover="onMouseOver('prez')"
+    <section id="prez" 
+            @mouseover="onMouseOver('prez')"
             @mouseout="onMouseOut('prez')"
-            id="prez" class="text-center col-flex-wrap-center">
+            class="text-center col-flex-wrap-center">
         <h1 class="presentation-titre">Marc Pogam</h1>
         <p class="presentation-text">
             Passionné par l'informatique en général et plus particuliairement le développement, 
             je vous présente mon portfolio rassemblant quelques unes de mes réalisations.
         </p>
     </section>
-    <section @mouseover="onMouseOver('creation')"
+    <section id="creation"
+            @mouseover="onMouseOver('creation')"
             @mouseout="onMouseOut('creation')"
-            id="creation" class="text-center row-flex-wrap-center">
+            class="text-center row-flex-wrap-center">
         <article>
             <figure class="photo-profile">
                 <a href="/">
@@ -57,6 +58,11 @@
             </figure>
             <h2>Un cahier des charges</h2>
         </article>
+    </section>
+    <section id="contact"
+            @mouseover="onMouseOver('creation')"
+            @mouseout="onMouseOut('creation')">
+
     </section>
 </template>
 
