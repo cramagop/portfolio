@@ -1,11 +1,24 @@
 <template>
-    <div class="notfound">
-        <p>404</p>
+    <div class="col-flex-wrap-center">
+        <figure>
+            <a href="" target="_blank">
+                <img src="../assets/pictures/vecteezy_404-landing-page_6549647.jpg"
+                    title="Note found"
+                    alt="Une image montrant l'erreur 404">
+            </a>
+        </figure>
+        <p class="notfound">404</p>
     </div>
 </template>
 
 <style scoped>
+    figure {
+        width: 50%;
+        height: 50%;
+    }
+
     .notfound {
-        font-size: 2rem;
+        font-weight: bold;
+        font-size: 3rem;
     }
 </style>

@@ -1,9 +1,27 @@
 <script setup>
-import TheWelcome from '../components/TheWelcome.vue'
+  import TheHomeView from '../components/TheHomeView.vue'
+
+  function parentElementToImpact(childElementID) {
+        switch(childElementID){
+            case 'prez':
+                return document.getElementById('prez_link');
+            case 'creation':
+                return document.getElementById('creation_link');
+            case 'contact':
+                return document.getElementById('contact_link')
+        };
+    };
+
+    function underline(childElementID) {
+        parentElementToImpact(childElementID).style.textDecoration = "underline";
+    }
+
+    function unUnderline(childElementID) {
+        parentElementToImpact(childElementID).style.textDecoration = "none";
+    }
+
 </script>
 
 <template>
-    <main>
-      <TheWelcome />
-    </main>
+  <TheHomeView @in-focus="underline" @out-focus="unUnderline"/>
 </template>

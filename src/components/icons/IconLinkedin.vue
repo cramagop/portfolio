@@ -1,9 +1,0 @@
-<template>
-    <figure class="footer__icon">
-        <a href="https://www.linkedin.com/in/marc-pogam-03b046168" target="_blank">
-        <img src="../../assets/icons/linkedin.png"
-            title="Vers mon linkedin"
-            alt="Lien vers le linkedin de Marc POGAM">
-        </a>
-    </figure>
-</template>
