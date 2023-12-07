@@ -1,34 +1,43 @@
 <script setup>
     import { ref } from 'vue';
     import creationModal from './creationModal.vue';
+    import modalAllConfig from '../assets/content/modalAllConfig'
 
-    const modalDisplay = ref('none');
+    const modalConfig = ref({
+        display: "none",
+        content: {
+            title: "",
+            creationDate: "",
+            fileLink: "",
+            gitLink: ""}
+    });
 
     const emit = defineEmits(["mouseOver", "mouseOut"]);
 
-    function onMouseOver(elementID) {
-        emit("mouseOver", elementID);
+    function onMouseOver(parentElementIDtoImpact) {
+        emit("mouseOver", parentElementIDtoImpact);
     };
 
-    function onMouseOut(elementID) {
-        emit("mouseOut", elementID)
+    function onMouseOut(parentElementIDtoImpact) {
+        emit("mouseOut", parentElementIDtoImpact);
     };
 
     function onModalClickClose() {
-        modalDisplay.value = 'none';
+        modalConfig.value.display = 'none';
     };
 
-    function onCreationClick() {
-        modalDisplay.value = 'block';
+    function onCreationClick(creationName) {
+        modalConfig.value = modalAllConfig[creationName];
+        modalConfig.value.display = 'block';
     }
 
 </script>
 
 <template>
-    <creationModal @close-clicked="onModalClickClose" :display-props=modalDisplay />
+    <creationModal @close-clicked="onModalClickClose" :modal-config=modalConfig />
     <section id="prez" 
-            @mouseover="onMouseOver('prez')"
-            @mouseout="onMouseOut('prez')"
+            @mouseover="onMouseOver('prez_link')"
+            @mouseout="onMouseOut('prez_link')"
             class="text-center col-flex-wrap-center">
         <h1 class="presentation-titre">Marc Pogam</h1>
         <p class="presentation-text">
@@ -37,10 +46,10 @@
         </p>
     </section>
     <section id="creation"
-            @mouseover="onMouseOver('creation')"
-            @mouseout="onMouseOut('creation')"
+            @mouseover="onMouseOver('creation_link')"
+            @mouseout="onMouseOut('creation_link')"
             class="text-center row-flex-wrap-center">
-        <article @click="onCreationClick">
+        <article @click="onCreationClick('cv')">
             <figure class="picture-creation">
                 <img class="picture-creation__img"
                     src="../assets//pictures/cv.png"
@@ -49,16 +58,16 @@
             </figure>
             <h2>Mon CV</h2>
         </article>
-        <article @click="onCreationClick">
+        <article @click="onCreationClick('formulaire')">
             <figure class="picture-creation">
                 <img class="picture-creation__img"
                     src="../assets//pictures/formulaire.PNG"
-                    title="Formualaire"
+                    title="Formulaire"
                     alt="Un formulaire avec des champs vide">
             </figure>
             <h2>Dynamiser un formulaire</h2>
         </article>
-        <article @click="onCreationClick">
+        <article @click="onCreationClick('cahierDesCharges')">
             <figure class="picture-creation">
                 <img class="picture-creation__img"
                     src="../assets//pictures/La socketterie.png"
@@ -69,8 +78,8 @@
         </article>
     </section>
     <section id="contact"
-            @mouseover="onMouseOver('creation')"
-            @mouseout="onMouseOut('creation')">
+            @mouseover="onMouseOver('contact_link')"
+            @mouseout="onMouseOut('contact_link')">
 
     </section>
 </template>

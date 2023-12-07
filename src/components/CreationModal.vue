@@ -1,7 +1,7 @@
 <script setup>
 
     defineProps ({
-        displayProps: String
+      modalConfig : Object
     });
 
     const emit = defineEmits(["closeClicked"]);
@@ -9,15 +9,14 @@
     function onClickClose() {
         emit("closeClicked")
     };
-
 </script>
 
 <template>
-    <div id="myModal" :style="{ display: displayProps }" class="modal">
+    <div id="myModal" @click="onClickClose()" :style="{ display: modalConfig.display }" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close" @click="onClickClose()">&times;</span>
-            <p>Some text in the Modal..</p>
+            <p>{{ modalConfig.content.title }}</p>
         </div>
     </div>
 </template>
