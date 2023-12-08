@@ -6,7 +6,7 @@ export default {
             techno: "HTML/CSS",
             creationDate: "22/11/2023",
             creationLink: "../",
-            gitLink: ".."}
+            gitLink: "https://github.com/cramagop/cv-mpo"}
     },
     formulaire: {
         display: 'block',
@@ -15,7 +15,7 @@ export default {
             techno: "HTML/CSS/JS",
             creationDate: "22/11/2023",
             creationLink: "../",
-            gitLink: ".."}
+            gitLink: "https://github.com/cramagop/dynespacecomments"}
     },
     cahierDesCharges: {
         display: 'block',
@@ -24,6 +24,6 @@ export default {
             techno: "Word/draw.io/ECSS",
             creationDate: "22/11/2023",
             creationLink: "../",
-            gitLink: false}
+            gitLink: ""}
     }
 };
