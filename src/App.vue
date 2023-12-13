@@ -46,7 +46,7 @@
                 </a>
             </figure>
         </div>
-        <p>Dernière mise à jour le <time datetime="2023-11-29">29/11/2023</time></p>
+        <p><small>Dernière mise à jour le <time datetime="2023-11-29">29/11/2023</time></small></p>
     </footer>
 </template>
 

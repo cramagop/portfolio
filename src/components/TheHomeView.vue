@@ -33,8 +33,7 @@
     function onCreationClick(creationName) {
         modalConfig.value = modalAllConfig[creationName];
         modalConfig.value.display = 'block';
-    }
-
+    };
 </script>
 
 <template>
@@ -55,38 +54,10 @@
             class="text-center col-flex-wrap-center">
             <h2>Mes créations</h2>
             <div class="row-flex-wrap-center space-around">
-                <CreationArticle 
-                    v-for="item in articleContent" 
-                    :key="item.name" 
-                    :article-content="item"
+                <CreationArticle v-for="article in articleContent" 
+                    :key="article.name" 
+                    :article-content="article"
                     @creation-clicked="onCreationClick" />
-            <!--<article @click="onCreationClick('cv')" class="col-flex-wrap-center">
-                <figure class="picture-creation">
-                    <img class="picture-creation__img"
-                        src="../assets//pictures/cv.png"
-                        title="CV"
-                        alt="Icône représentant un CV">
-                </figure>
-                <h2>Mon CV</h2>
-            </article>
-            <article @click="onCreationClick('formulaire')" class="col-flex-wrap-center">
-                <figure class="picture-creation">
-                    <img class="picture-creation__img"
-                        src="../assets//pictures/formulaire.png"
-                        title="Formulaire"
-                        alt="Un formulaire avec des champs vide">
-                </figure>
-                <h2>Dynamiser un formulaire</h2>
-            </article>
-            <article @click="onCreationClick('cahierDesCharges')" class="col-flex-wrap-center">
-                <figure class="picture-creation">
-                    <img class="picture-creation__img"
-                        src="../assets//pictures/La socketterie.png"
-                        title="Cahier des charges"
-                        alt="Un paire de chaussette titré la socketterie">
-                </figure>
-                <h2>Un cahier des charges</h2>
-            </article>-->
             </div>
     </section>
     <section id="contact"
@@ -97,22 +68,8 @@
 </template>
 
 <style scoped>
-    
-    h2 {
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
-    }
-
-    article {
-        margin-bottom: 1rem;
-    }
-
-    article:hover {
-        box-shadow: 5px 5px 10px black;
-    }
-
     .space-around {
-        width: 80%;
+        width: 90%;
         justify-content: space-between;
     }
     .presentation-titre {
@@ -123,15 +80,5 @@
     .presentation-text {
         width: 60%;
         margin-top: 0px;
-    }
-
-    .picture-creation {
-        width: 150px;
-        height: 150px;
-        margin-top: 30px;
-    }
-
-    .picture-creation__img {
-        box-shadow: 0 0 15px black;
     }
 </style>
