@@ -5,15 +5,6 @@
 
     const emit = defineEmits(["closeClicked"]);
 
-    function containLink (item) {
-      console.log(item);
-      /*if (Reflect.has(item, "islink")) {
-        return item.Islink
-      } else {
-        return false
-      }*/
-    }
-
     function onClickClose() {
         emit("closeClicked")
     };
@@ -21,32 +12,20 @@
 
 <template>
     <div @click="onClickClose()" :style="{ display: modalConfig.display }" class="modal">
-      <ul>
-        <template v-for="(item, key) in modalConfig.content">
-          <li v-if="item.hasOwnProperty('isLink')">{{ key }} : <a :href="item.link" target="_blank">{{ item.link }}</a></li>
-          <li v-else>{{ key }} : {{ item }}</li>
-        </template>
-      </ul>
-      <!--<div class="modal-content col-flex-wrap-center">
-          <h2>{{ modalConfig.content.title }}</h2>
-          <div class="row-flex-wrap-center line-content">
-            <span class="start">Technologie: </span>
-            <span class="end">{{ modalConfig.content.techno }}</span>
-          </div>
-          <div class="row-flex-wrap-center line-content">
-            <span class="start">Date de création: </span>
-            <span class="end">{{ modalConfig.content.creationDate }}</span>
-          </div>
-          <div class="row-flex-wrap-center line-content">
-            <span class="start">Lien: </span>
-            <a :href="modalConfig.content.creationLink" target="_blank" class="end">Voir la création</a>
-          </div>
-          <div class="row-flex-wrap-center line-content">
-            <span class="start">Git: </span>
-            <a :href="modalConfig.content.gitLink" target="_blank" class="end">Aller sur le repo GIT</a>
-          </div>
-          <button title="Fermer" class="close" @click="onClickClose()">Fermer</button>
-      </div>-->
+      <div class="modal-content col-flex-wrap-center">
+        <h2>{{ modalConfig.content.title }}</h2>
+        <ul>
+          <template v-for="(item, key) in modalConfig.content">
+            <li v-if="item.hasOwnProperty('isLink')">
+              <span class="line-title">{{ key }}</span> : <a :href="item.link" target="_blank">{{ item.link }}</a>
+            </li>
+            <li v-else>
+              <span class="line-title">{{ key }}</span> : {{ item }}
+            </li>
+          </template>
+        </ul>
+        <button title="Fermer" class="close" @click="onClickClose()">Fermer</button>
+      </div>
     </div>
 </template>
 
@@ -67,20 +46,10 @@
     margin: 0rem 0.2rem 0rem 0rem;
   }
 
-  .start {
+  .line-title {
     font-weight: bold;
-    display: flex;
-    justify-content: start;
   }
-  .end {
-    display: flex;
-    margin-left: 0.1rem;
-  }
-  
 
-  .line-content {
-    width: 50%;
-  }
 .modal {
   position: fixed; /* Stay in place */
   padding-top: 5%; /* Location of the box */
