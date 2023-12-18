@@ -17,7 +17,7 @@
                  :title="articleContent.imgTitle"
                  :alt="articleContent.imgAlt">
         </figure>
-        <h2>{{articleContent.title}}</h2>
+        <h2>{{ articleContent.title }}</h2>
     </article>
 </template>
 
