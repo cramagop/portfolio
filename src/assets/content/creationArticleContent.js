@@ -1,3 +1,4 @@
+//Data could comming from a DB (ie: mongo)
 export default [
     {
         name: 'cv',
@@ -9,7 +10,7 @@ export default [
     {
         name: 'cahierDesCharges',
         title: 'Un cahier des charges',
-        imgSrc: 'La socketterie.png',
+        imgSrc: 'la_socketterie.png',
         imgTitle: 'Cahier des charges',
         imgAlt: 'Un paire de chaussette titré la socketterie'
     },

@@ -4,7 +4,7 @@
             <a href="/" target="_blank">
                 <img src="../assets/pictures/vecteezy_404-landing-page_6549647.jpg"
                     title="Not found"
-                    alt="Une image montrant l'erreur 404">
+                    alt="Erreur 404">
             </a>
         </figure>
         <p class="notfound">404</p>

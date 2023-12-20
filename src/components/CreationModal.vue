@@ -42,27 +42,21 @@
     margin-bottom: 1rem;
   }
 
-  p {
-    margin: 0rem 0.2rem 0rem 0rem;
-  }
-
   .line-title {
     font-weight: bold;
   }
 
 .modal {
-  position: fixed; /* Stay in place */
-  padding-top: 5%; /* Location of the box */
+  position: fixed;
+  padding-top: 5%;
   left: 0;
   top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
 }
 
-/* Modal Content */
 .modal-content {
   align-items: center;
   margin: auto;
@@ -74,7 +68,6 @@
   border-radius: 15% 5%;
 }
 
-/* The Close Button */
 .close {
   justify-self: flex-end;
   color: black;

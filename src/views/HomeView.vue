@@ -2,8 +2,12 @@
     import { ref, computed } from 'vue';
     import creationModal from '../components/creationModal.vue';
     import CreationArticle from '../components/CreationArticle.vue';
+    
+    //Load content data could comming from a DB 
     import modalAllConfig from '../assets/content/modalAllConfig'
     import creationArticleContent from '../assets/content/creationArticleContent';
+
+    const articleContent = ref(creationArticleContent);
 
     const modalConfig = ref({
         display: "none",
@@ -14,25 +18,30 @@
             gitLink: ""}
     });
 
+    //Object used to bind form contact content
+    const messageContent = ref({
+        firsname:"",
+        lastname:"",
+        object:"",
+        message:"",
+    });
+
+    //Construct mail request with form user entries
+    const emailMe = computed(()=>{
+        const mailBody = encodeURIComponent(
+            "Nom: " + messageContent.value.firsname + "\nPrénom: " + messageContent.value.lastname + "\nMessage:" + "\n" + messageContent.value.message);
+
+        return `mailto:${import.meta.env.VITE_MAIL}?subject=${messageContent.value.object}&body=${mailBody}`;
+    });
+
+    //HTML element ID: underline property
     const isUnderline = ref({
         prez: "none",
         creation: "none",
         contact: "none"
     });
 
-    const messageContent = ref({
-        firsname:"",
-        lasname:"",
-        object:"",
-        message:"",
-    });
-
-    const emailMe = computed(()=>{
-        return `mailto:${import.meta.env.VITE_MAIL}?subject=${messageContent.value.object}&body=${messageContent.value.message}`;
-    });
-
-    const articleContent = ref(creationArticleContent);
-
+    //Similar of a CSS :hover but for any HTML element target ID in isUnderline
     function changeUnderline(event) {
         const newState = isUnderline.value[event.target.id] == "none" ? "underline" : "none";
         isUnderline.value[event.target.id] = newState;
@@ -83,14 +92,14 @@
             </div>
         </section>
         <section id="contact" @mouseenter="changeUnderline" @mouseleave="changeUnderline" class="text-center col-flex-wrap-center">
-            <h2>N'hésitez pas à me laisser un message</h2>
-            <form :action="emailMe" method="post">
+            <h2>Contact</h2>
+            <form :action="emailMe" method="post" enctype="application/x-www-form-urlencoded">
                 <div class="row-flew-wrap-center">
                     <label>Nom :
                         <input required type="text" v-model="messageContent.firsname" id="firstname" placeholder="Votre nom...">
                     </label>
                     <label>Prénom :
-                        <input required type="text" v-model="messageContent.lasname" id="lastname" placeholder="Votre prénom...">
+                        <input required type="text" v-model="messageContent.lastname" id="lastname" placeholder="Votre prénom...">
                     </label>
                 </div>  
                 <label>Objet :
@@ -128,6 +137,10 @@
             justify-content: space-around;
     }
 
+    nav > a:hover {
+        color: cadetblue;
+    }
+
     section {
         border-top: 1px solid black;
     }
@@ -142,6 +155,7 @@
 
     input {
         height: 1.5rem;
+        width: 150px;
         margin-top: 10px;
         margin-right: 10px;
         margin-bottom: 10px;
