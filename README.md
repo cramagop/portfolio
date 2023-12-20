@@ -11,8 +11,12 @@ Site based on vuejs application template.
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
 
-In your environement you shall have an .env.local containing an email address
-This mail is used to send the application users meassage.
+In your environement you shall have an .env.local containing an email address. This mail is used to send the application users meassage.
+
+.env.local
+```sh
+VITE_MAIL=john.doe@domain.com
+```
 
 ## Project Setup
 
