@@ -1,6 +1,7 @@
-# firstapp
+# Portfolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Portfolio created in context of European Center of Formation excercise.
+Site based on vuejs application template.
 
 ## Recommended IDE Setup
 
@@ -9,6 +10,9 @@ This template should help get you started developing with Vue 3 in Vite.
 ## Customize configuration
 
 See [Vite Configuration Reference](https://vitejs.dev/config/).
+
+In your environement you shall have an .env.local containing an email address
+This mail is used to send the application users meassage.
 
 ## Project Setup
 

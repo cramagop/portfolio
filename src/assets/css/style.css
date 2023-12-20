@@ -6,36 +6,30 @@
     font-weight: normal;
   }
   
-
-    body {
-      display: flex;
-      place-items: center;
-    }
-
-    main {
-        border-bottom: solid 1px black;
-        border-top: solid 1px black;
-    }
-
-    img {
-      width: 100%;
-      height: 100%;
-    }
-
-    .col-flex-wrap-center {
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .row-flex-wrap-center {
-      display: flex;
-      flex-wrap: wrap;
-      flex-direction: row;
-      align-items: center;
+  body {
+    display: flex;
+    place-items: center;
   }
 
-    .text-center {
-      text-align: center;
-    }
+  img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .col-flex-wrap-center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .row-flex-wrap-center {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
